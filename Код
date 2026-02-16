@@ -1,1 +1,21 @@
+код дял датчиков линии
 
+const int sensorPin = 2;
+int sensorValue = 0;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(sensorPin, INPUT);
+}
+
+void loop() {
+  sensorValue = digitalRead(sensorPin);
+  
+  if (sensorValue == LOW) {
+    Serial.println("Black");
+  } else {
+    Serial.println("White");
+  }
+  
+  delay(100);
+}
